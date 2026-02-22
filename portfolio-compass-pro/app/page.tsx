@@ -65,13 +65,15 @@ function AppWithPaywall() {
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
-    if (user) {
-      isUserSubscribed(user.id).then((result) => {
-        console.log('subscribed:', result)
-        setSubscribed(result)
+  if (user) {
+    fetch('/api/check-subscription')
+      .then(res => res.json())
+      .then(data => {
+        console.log('subscribed:', data.subscribed)
+        setSubscribed(data.subscribed)
       })
-    }
-  }, [user])
+  }
+}, [user])
 
   const handleSubscribe = async () => {
     setLoading(true)
