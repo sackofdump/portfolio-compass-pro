@@ -2156,7 +2156,7 @@ async function toggleDrawer(ticker, strategy, name, desc, isStock) {
   const sectorSummary = Object.entries(profile.sectors).sort((a,b) => b[1]-a[1]).map(([s,p]) => s + ': ' + p + '%').join(', ');
   // Check AI usage limit
   const aiUses = parseInt(localStorage.getItem('pc_ai_uses') || '0');
-  if (aiUses >= FREE_AI_USES) {
+  if (false) {
     textEl.innerHTML = '<div style="font-family:monospace;font-size:10px;color:var(--muted);line-height:1.7">' +
       '✦ <strong style="color:var(--text)">AI explanations are a Pro feature.</strong><br>' +
       'You\u2019ve used your ' + FREE_AI_USES + ' free AI lookups. Upgrade to get unlimited AI-powered insights for every pick.<br>' +
@@ -2418,7 +2418,7 @@ function runWhatIf() {
 
 // ── PORTFOLIO SAVE/LOAD ───────────────────────────────────
 const MAX_SLOTS = Infinity;
-const FREE_AI_USES = 3; // Free AI explanations before upgrade prompt
+const FREE_AI_USES = 999999; // Free AI explanations before upgrade prompt
 function getSavedPortfolios() { try { return JSON.parse(localStorage.getItem('pc_portfolios') || '[]'); } catch { return []; } }
 function savePortfoliosLS(p) { localStorage.setItem('pc_portfolios', JSON.stringify(p)); }
 
@@ -3028,19 +3028,19 @@ document.getElementById('pctInput').addEventListener('keydown', e => { if (e.key
             <div class="upgrade-tier-name">Pro ✦</div>
             <div class="upgrade-tier-desc">Unlimited AI insights · Screenshot import · PDF export</div>
           </div>
-          <div class="upgrade-tier-price">$2<span>/mo</span></div>
+          <div class="upgrade-tier-price">$7<span>/mo</span></div>
         </div>
         <div class="upgrade-tier">
           <div>
             <div class="upgrade-tier-name">Lifetime</div>
             <div class="upgrade-tier-desc">Everything in Pro · Pay once, own forever</div>
           </div>
-          <div class="upgrade-tier-price" style="color:#a78bfa">$20<span> one-time</span></div>
+          <div class="upgrade-tier-price" style="color:#a78bfa">$49<span> one-time</span></div>
         </div>
       </div>
       <div class="upgrade-actions">
-        <button class="btn-upgrade-cta" onclick="showToast('Coming soon! 🚀'); closeUpgradeModal();">Get Pro — $2/mo</button>
-        <button class="btn-upgrade-secondary" onclick="showToast('Coming soon! 🚀'); closeUpgradeModal();">Lifetime deal — $20</button>
+        <button class="btn-upgrade-cta" onclick="showToast('Coming soon! 🚀'); closeUpgradeModal();">Get Pro — $7/mo</button>
+        <button class="btn-upgrade-secondary" onclick="showToast('Coming soon! 🚀'); closeUpgradeModal();">Lifetime deal — $49</button>
       </div>
       <div class="upgrade-free-note" id="aiUsesNote"></div>
     </div>
