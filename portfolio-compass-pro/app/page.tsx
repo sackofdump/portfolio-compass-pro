@@ -141,7 +141,7 @@ function AppWithPaywall() {
         <UserButton afterSignOutUrl="/" />
       </div>
       <iframe
-        src="/app.html"
+        src="/app-content"
         style={{ width: '100vw', height: '100vh', border: 'none', display: 'block' }}
       />
     </div>
