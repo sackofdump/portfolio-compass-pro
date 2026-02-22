@@ -2155,17 +2155,14 @@ function runWhatIf() {
 })();
 
 // ── PORTFOLIO SAVE/LOAD ───────────────────────────────────
-const MAX_SLOTS = 3;
+const MAX_SLOTS = Infinity;
 function getSavedPortfolios() { try { return JSON.parse(localStorage.getItem('pc_portfolios') || '[]'); } catch { return []; } }
 function savePortfoliosLS(p) { localStorage.setItem('pc_portfolios', JSON.stringify(p)); }
 
 function savePortfolio() {
   if (holdings.length === 0) { showToast('Add holdings first!'); return; }
   const portfolios = getSavedPortfolios();
-  if (portfolios.length >= MAX_SLOTS) {
-    showUpgradeModal();
-    return;
-  }
+
   const name = 'Portfolio ' + (portfolios.length + 1);
   portfolios.push({name, holdings: JSON.parse(JSON.stringify(holdings))});
   savePortfoliosLS(portfolios);
@@ -2288,7 +2285,7 @@ function toggleShowMore(type) {
 
 // ── UPGRADE MODAL ────────────────────────────────────────
 function showUpgradeModal() {
-  document.getElementById('upgradeModal').classList.add('open');
+  window.location.href = 'https://buy.stripe.com/dRm4gz5LMb4Y7mv8eB6AM01';
 }
 function closeUpgradeModal() {
   document.getElementById('upgradeModal').classList.remove('open');
@@ -2304,7 +2301,7 @@ document.getElementById('tickerInput').addEventListener('keydown', e => { if (e.
 document.getElementById('pctInput').addEventListener('keydown', e => { if (e.key==='Enter') addStock(); });
 </script>
   <!-- Upgrade Modal -->
-  <div class="upgrade-modal" id="upgradeModal">
+  <div class="upgrade-modal" id="upgradeModal" style="display:none!important">
     <div class="upgrade-box">
       <button class="upgrade-close" onclick="closeUpgradeModal()">&times;</button>
       <div class="upgrade-icon">🧭</div>
