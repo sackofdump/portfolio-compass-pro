@@ -2156,10 +2156,10 @@ async function toggleDrawer(ticker, strategy, name, desc, isStock) {
   const sectorSummary = Object.entries(profile.sectors).sort((a,b) => b[1]-a[1]).map(([s,p]) => s + ': ' + p + '%').join(', ');
   // Check AI usage limit
   const aiUses = parseInt(localStorage.getItem('pc_ai_uses') || '0');
-  if (false) {
+  if (aiUses >= FREE_AI_USES) {
     textEl.innerHTML = '<div style="font-family:monospace;font-size:10px;color:var(--muted);line-height:1.7">' +
       '✦ <strong style="color:var(--text)">AI explanations are a Pro feature.</strong><br>' +
-      'You\u2019ve used your ' + FREE_AI_USES + ' free AI lookups. Upgrade to get unlimited AI-powered insights for every pick.<br>' +
+      'You\u2019ve used your 1 free AI explanation. Upgrade to get unlimited AI-powered insights for every pick.<br>' +
       '<button onclick="showUpgradeModal()" style="margin-top:8px;background:var(--accent);color:#000;border:none;border-radius:6px;padding:5px 12px;font-size:11px;font-weight:700;cursor:pointer;">Upgrade to Pro</button>' +
       '</div>';
     return;
@@ -2418,7 +2418,7 @@ function runWhatIf() {
 
 // ── PORTFOLIO SAVE/LOAD ───────────────────────────────────
 const MAX_SLOTS = Infinity;
-const FREE_AI_USES = 999999; // Free AI explanations before upgrade prompt
+const FREE_AI_USES = 1; // Free AI explanations before upgrade prompt
 function getSavedPortfolios() { try { return JSON.parse(localStorage.getItem('pc_portfolios') || '[]'); } catch { return []; } }
 function savePortfoliosLS(p) { localStorage.setItem('pc_portfolios', JSON.stringify(p)); }
 
@@ -2595,7 +2595,7 @@ function toggleShowMore(type) {
 }
 
 // ── UPGRADE MODAL ────────────────────────────────────────
-function showUpgradeModal() { return;
+function showUpgradeModal() {
   document.getElementById('upgradeModal').classList.add('open');
 }
 function closeUpgradeModal() {
@@ -3019,7 +3019,7 @@ document.getElementById('pctInput').addEventListener('keydown', e => { if (e.key
         <div class="upgrade-tier">
           <div>
             <div class="upgrade-tier-name">Free</div>
-            <div class="upgrade-tier-desc">3 AI lookups · Unlimited portfolios · All analysis tools</div>
+            <div class="upgrade-tier-desc">1 AI explanation · Unlimited portfolios · All analysis tools</div>
           </div>
           <div class="upgrade-tier-price" style="color:var(--muted)">$0</div>
         </div>
