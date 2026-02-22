@@ -135,15 +135,14 @@ function AppWithPaywall() {
     )
   }
 
-  return (
+    return (
     <div style={{ position: 'relative' }}>
       <div style={{ position: 'fixed', top: '16px', right: '20px', zIndex: 9999 }}>
         <UserButton afterSignOutUrl="/" />
       </div>
       <iframe
-        src="/app-content"
+        src="/app.html"
         style={{ width: '100vw', height: '100vh', border: 'none', display: 'block' }}
       />
     </div>
-  )
-}
+    )
