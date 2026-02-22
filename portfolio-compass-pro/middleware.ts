@@ -5,6 +5,7 @@ const isPublicRoute = createRouteMatcher([
   '/sign-up(.*)',
   '/app-content',
 ])
+
 export default clerkMiddleware(async (auth, request) => {
   if (!isPublicRoute(request)) {
     await auth.protect()
@@ -12,5 +13,5 @@ export default clerkMiddleware(async (auth, request) => {
 })
 
 export const config = {
-  matcher: ['/((?!_next|app\\.html|.*\\.svg|.*\\.ico).*)'],
+  matcher: ['/((?!_next).*)'],
 }
