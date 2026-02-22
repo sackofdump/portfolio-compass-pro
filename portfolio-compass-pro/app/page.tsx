@@ -66,7 +66,10 @@ function AppWithPaywall() {
 
   useEffect(() => {
     if (user) {
-      isUserSubscribed(user.id).then(setSubscribed)
+      isUserSubscribed(user.id).then((result) => {
+        console.log('subscribed:', result)
+        setSubscribed(result)
+      })
     }
   }, [user])
 
