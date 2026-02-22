@@ -478,168 +478,6 @@
   .btn-refresh-market.spinning svg { animation:spin 0.7s linear infinite; }
 
   /* Disclaimer */
-  /* ── PORTFOLIO HEALTH CARD ── */
-  .health-card {
-    background:var(--surface); border:1px solid var(--border); border-radius:16px;
-    padding:20px 24px; animation:fadeUp 0.3s ease;
-  }
-  .health-card-title {
-    font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase;
-    color:var(--muted); margin-bottom:18px; font-family:'Space Mono',monospace;
-  }
-  .health-grid {
-    display:grid; grid-template-columns:1fr 1fr; gap:12px;
-  }
-  /* Grade tile — bigger font already set inline */
-  .health-metric {
-    background:var(--surface2); border:1px solid var(--border); border-radius:10px;
-    padding:16px 18px; text-align:center;
-  }
-  .health-metric-label {
-    font-family:'Space Mono',monospace; font-size:9px; letter-spacing:2px;
-    text-transform:uppercase; color:var(--muted); margin-bottom:10px; text-align:center;
-  }
-  .health-metric-value {
-    font-family:'Inter',sans-serif; font-size:24px; font-weight:700;
-    color:var(--text); line-height:1; margin-bottom:6px;
-  }
-  .health-metric-sub {
-    font-family:'Inter',sans-serif; font-size:11px; color:var(--muted); font-weight:500;
-  }
-  .health-metric-sub.good { color:var(--conservative); }
-  .health-metric-sub.warn { color:var(--moderate); }
-  .health-metric-sub.bad  { color:var(--aggressive); }
-  /* Risk meter */
-  .risk-meter-track {
-    height:5px; background:var(--border); border-radius:3px; margin:8px auto 6px; overflow:hidden; max-width:120px;
-  }
-  .risk-meter-fill {
-    height:100%; border-radius:3px; transition:width 0.8s cubic-bezier(0.4,0,0.2,1);
-  }
-  /* Benchmark row */
-  .benchmark-row {
-    display:flex; align-items:center; justify-content:space-between;
-    padding:9px 0; border-bottom:1px solid var(--border);
-    font-family:'Inter',sans-serif; font-size:12px;
-  }
-  .benchmark-row:last-child { border-bottom:none; padding-bottom:0; }
-  .benchmark-label { color:var(--muted); font-weight:500; min-width:120px; }
-  .benchmark-yours { color:var(--text); font-weight:700; }
-  .benchmark-spy   { color:var(--muted); font-size:11px; }
-  .benchmark-delta { font-weight:700; font-family:'Space Mono',monospace; font-size:11px; }
-  .delta-up   { color:var(--conservative); }
-  .delta-down { color:var(--aggressive); }
-  .delta-flat { color:var(--muted); }
-  /* Rebalance suggestions */
-  .rebalance-list { display:flex; flex-direction:column; gap:8px; }
-  .rebalance-item {
-    display:flex; align-items:flex-start; gap:10px;
-    font-family:'Inter',sans-serif; font-size:12px; color:var(--muted); line-height:1.6; font-weight:400;
-  }
-  .rebalance-icon { flex-shrink:0; margin-top:2px; font-family:'Space Mono',monospace; font-size:11px; }
-  .rebalance-item .trim { color:var(--aggressive); font-weight:600; }
-  .rebalance-item .add  { color:var(--conservative); font-weight:600; }
-  /* Overlap warnings inline */
-  .overlap-list { display:flex; flex-direction:column; gap:8px; }
-  .overlap-item {
-    display:flex; align-items:flex-start; gap:10px;
-    font-family:'Inter',sans-serif; font-size:12px; color:var(--muted); line-height:1.6;
-  }
-  .overlap-icon { color:var(--moderate); flex-shrink:0; margin-top:2px; }
-
-  /* ── SMART ALERTS ── */
-  .smart-alerts {
-    display:flex; flex-direction:column; gap:6px;
-    animation:fadeUp 0.25s ease;
-  }
-  .alert-item {
-    display:flex; align-items:flex-start; gap:10px;
-    background:var(--surface); border:1px solid var(--border);
-    border-radius:10px; padding:11px 14px;
-    font-family:'Space Mono',monospace; font-size:11px; line-height:1.6;
-  }
-  .alert-item.alert-warn  { border-color:rgba(255,209,102,0.35); background:rgba(255,209,102,0.05); }
-  .alert-item.alert-bad   { border-color:rgba(255,77,109,0.3);   background:rgba(255,77,109,0.05); }
-  .alert-item.alert-good  { border-color:rgba(6,214,160,0.3);    background:rgba(6,214,160,0.05); }
-  .alert-icon { font-size:14px; flex-shrink:0; margin-top:1px; }
-  .alert-text { color:var(--text); }
-  .alert-text strong { color:inherit; }
-  .alert-item.alert-warn .alert-text  { color:var(--moderate); }
-  .alert-item.alert-bad  .alert-text  { color:var(--aggressive); }
-  .alert-item.alert-good .alert-text  { color:var(--conservative); }
-
-  /* ── POSITION SIZING ── */
-  .sizer-card {
-    background:var(--surface); border:1px solid var(--border); border-radius:16px;
-    padding:20px 24px; animation:fadeUp 0.4s ease 0.1s backwards;
-  }
-  .sizer-header {
-    display:flex; align-items:center; justify-content:space-between; margin-bottom:14px;
-  }
-  .sizer-title { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); }
-  .sizer-input-row { display:flex; align-items:center; gap:8px; margin-bottom:14px; }
-  .sizer-prefix {
-    font-family:'Space Mono',monospace; font-size:16px; color:var(--muted);
-    background:var(--surface2); border:1px solid var(--border); border-radius:8px 0 0 8px;
-    padding:9px 12px; border-right:none;
-  }
-  .sizer-input {
-    flex:1; background:var(--surface2); border:1px solid var(--border);
-    border-radius:0 8px 8px 0; padding:9px 12px; color:var(--text);
-    font-family:'Space Mono',monospace; font-size:14px; font-weight:700;
-    outline:none; transition:border-color 0.2s;
-  }
-  .sizer-input:focus { border-color:var(--accent); }
-  .sizer-table { width:100%; border-collapse:collapse; }
-  .sizer-table th {
-    font-family:'Space Mono',monospace; font-size:9px; letter-spacing:1.5px;
-    text-transform:uppercase; color:var(--muted); text-align:left;
-    padding:0 8px 8px 0; border-bottom:1px solid var(--border);
-  }
-  .sizer-table th:last-child { text-align:right; }
-  .sizer-table td {
-    padding:8px 8px 8px 0; font-family:'Space Mono',monospace; font-size:11px;
-    border-bottom:1px solid rgba(255,255,255,0.04); vertical-align:middle;
-  }
-  .sizer-table tr:last-child td { border-bottom:none; }
-  .sizer-ticker { font-weight:700; color:var(--text); }
-  .sizer-sector { font-size:9px; color:var(--muted); margin-top:2px; }
-  .sizer-pct    { color:var(--muted); }
-  .sizer-dollars { font-weight:700; color:var(--accent); text-align:right; }
-  .sizer-shares  { color:var(--muted); font-size:10px; text-align:right; }
-  .sizer-note { font-family:'Space Mono',monospace; font-size:9px; color:var(--muted); margin-top:10px; opacity:0.6; }
-
-  /* ── WHAT-IF IN RESULTS ── */
-  .whatif-card {
-    background:var(--surface); border:1px solid var(--border); border-radius:16px;
-    padding:20px 24px; animation:fadeUp 0.4s ease 0.15s backwards;
-  }
-  .whatif-card-title { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); margin-bottom:14px; }
-  .whatif-card-row { display:grid; grid-template-columns:1fr 80px auto; gap:8px; margin-bottom:10px; align-items:end; }
-  .whatif-card-label { font-family:'Space Mono',monospace; font-size:9px; color:var(--muted); letter-spacing:1px; text-transform:uppercase; margin-bottom:4px; }
-  .btn-whatif-run {
-    background:var(--surface2); border:1px solid var(--border); border-radius:8px;
-    padding:9px 14px; font-family:'Space Mono',monospace; font-size:11px; color:var(--muted);
-    cursor:pointer; transition:border-color 0.15s, color 0.15s; white-space:nowrap;
-  }
-  .btn-whatif-run:hover { border-color:var(--accent); color:var(--accent); }
-  .whatif-card-result {
-    background:var(--surface2); border-radius:10px; padding:12px 14px;
-    font-family:'Space Mono',monospace; font-size:11px; color:var(--muted); line-height:1.7;
-    min-height:52px;
-  }
-  .whatif-card-result strong { color:var(--accent); }
-  .whatif-card-result .wi-new { color:var(--moderate); }
-  .whatif-card-result .wi-good { color:var(--conservative); }
-  .whatif-card-result .wi-bad  { color:var(--aggressive); }
-
-  .recommendations-header { padding: 8px 2px 0; }
-  .recommendations-title {
-    font-family: 'Inter', sans-serif;
-    font-size: 16px; font-weight: 700;
-    color: var(--text);
-  }
-
   .disclaimer-footer {
     text-align:center; font-family:'Space Mono',monospace; font-size:10px;
     color:var(--muted); opacity:0.5; padding:12px 8px 4px;
@@ -787,60 +625,6 @@
     .input-row { grid-template-columns: 1fr 60px; }
   }
 
-  /* ── PORTFOLIOS BAR ─── */
-  .portfolios-bar {
-    background:var(--surface); border:1px solid var(--border); border-radius:12px;
-    padding:12px 14px; position:relative; z-index:1;
-  }
-  .portfolios-bar-header {
-    display:flex; align-items:center; justify-content:space-between; margin-bottom:8px;
-  }
-  .portfolios-bar-title {
-    font-size:9px; font-weight:700; letter-spacing:2px; text-transform:uppercase;
-    color:var(--muted);
-  }
-  .free-badge { font-family:'Space Mono',monospace; font-size:9px; color:var(--accent); opacity:0.7; }
-  .btn-save-portfolio {
-    background:none; border:1px solid var(--border); border-radius:6px;
-    padding:3px 8px; font-family:'Space Mono',monospace; font-size:9px;
-    color:var(--muted); cursor:pointer; transition:all 0.15s;
-  }
-  .btn-save-portfolio:hover { border-color:var(--accent); color:var(--accent); }
-  .btn-save-portfolio:disabled { opacity:0.3; cursor:not-allowed; }
-  .portfolios-empty { font-family:'Space Mono',monospace; font-size:10px; color:var(--muted); font-style:italic; }
-  /* Save Modal */
-  .save-modal-overlay {
-    position:fixed; inset:0; background:rgba(0,0,0,0.7); z-index:1000;
-    display:flex; align-items:center; justify-content:center;
-    opacity:0; pointer-events:none; transition:opacity 0.2s;
-  }
-  .save-modal-overlay.visible { opacity:1; pointer-events:all; }
-  .save-modal {
-    background:var(--surface); border:1px solid var(--border); border-radius:16px;
-    padding:28px 32px; width:320px; display:flex; flex-direction:column; gap:14px;
-    transform:translateY(8px); transition:transform 0.2s;
-  }
-  .save-modal-overlay.visible .save-modal { transform:translateY(0); }
-  .save-modal h3 { font-size:15px; font-weight:700; color:var(--text); }
-  .save-modal p { font-size:11px; color:var(--muted); font-family:'Space Mono',monospace; line-height:1.6; }
-  .save-modal input {
-    background:var(--surface2); border:1px solid var(--border); border-radius:8px;
-    padding:10px 14px; color:var(--text); font-family:'Inter',sans-serif; font-size:13px;
-    outline:none; width:100%; transition:border-color 0.2s;
-  }
-  .save-modal input:focus { border-color:var(--accent); }
-  .save-modal-btns { display:flex; gap:8px; }
-  .btn-modal-save {
-    flex:1; background:var(--accent); color:#000; border:none; border-radius:8px;
-    padding:10px; font-weight:700; font-size:13px; cursor:pointer; transition:opacity 0.15s;
-  }
-  .btn-modal-save:hover { opacity:0.85; }
-  .btn-modal-cancel {
-    flex:1; background:none; color:var(--muted); border:1px solid var(--border);
-    border-radius:8px; padding:10px; font-size:13px; cursor:pointer; transition:border-color 0.15s;
-  }
-  .btn-modal-cancel:hover { border-color:var(--muted); }
-
   /* ── PORTFOLIO SAVE/LOAD ─── */
   .portfolio-manager {
     padding: 0 24px 12px;
@@ -850,23 +634,17 @@
   .portfolio-slot {
     display: flex; align-items: center; gap: 6px;
     background: var(--surface2); border: 1px solid var(--border);
-    border-radius: 20px; padding: 5px 10px 5px 12px; cursor: pointer;
-    transition: border-color 0.2s; max-width: 220px;
+    border-radius: 8px; padding: 7px 10px; cursor: pointer;
+    transition: border-color 0.2s;
   }
   .portfolio-slot:hover { border-color: var(--accent); }
-  .portfolio-slot.active { border-color: var(--accent); background: rgba(0,229,160,0.07); }
-  .slot-name {
-    font-family:'Inter',sans-serif; font-size:12px; font-weight:600;
-    color:var(--text); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:120px;
-  }
+  .portfolio-slot.active { border-color: var(--accent); background: rgba(0,229,160,0.06); }
+  .slot-name { font-family:'Space Mono',monospace; font-size:11px; color:var(--text); flex:1; }
   .slot-name-input {
-    font-family:'Inter',sans-serif; font-size:12px; font-weight:600; color:var(--text);
-    background: none; border: none; outline: none; cursor:text;
-    max-width:120px; width:auto;
+    font-family:'Space Mono',monospace; font-size:11px; color:var(--text);
+    background: none; border: none; outline: none; flex:1; cursor:text;
   }
-  .slot-count { font-family:'Space Mono',monospace; font-size:9px; color:var(--muted); white-space:nowrap; }
-  .slot-pencil { font-size:10px; color:var(--muted); opacity:0.5; cursor:text; flex-shrink:0; }
-  .slot-pencil:hover { opacity:1; }
+  .slot-count { font-family:'Space Mono',monospace; font-size:9px; color:var(--muted); }
   .slot-actions { display:flex; gap:4px; }
   .slot-btn {
     background:none; border:none; color:var(--muted); cursor:pointer;
@@ -1016,37 +794,12 @@
   </div>
 </header>
 
-<!-- Save Name Modal -->
-<div class="save-modal-overlay" id="saveModalOverlay" onclick="if(event.target===this)closeSaveModal()">
-  <div class="save-modal">
-    <h3>Save Portfolio</h3>
-    <p>Give this portfolio a name so you can load it later.</p>
-    <input type="text" id="portfolioNameInput" placeholder="e.g. My Roth IRA" maxlength="30"
-      onkeydown="if(event.key==='Enter')confirmSavePortfolio();if(event.key==='Escape')closeSaveModal()" />
-    <div class="save-modal-btns">
-      <button class="btn-modal-cancel" onclick="closeSaveModal()">Cancel</button>
-      <button class="btn-modal-save" onclick="confirmSavePortfolio()">Save</button>
-    </div>
-  </div>
-</div>
-
 <div class="main-grid container">
   <!-- Left: Input Panel -->
   <div>
-    <!-- My Portfolios -->
-    <div class="portfolios-bar" style="margin-bottom:12px">
-      <div class="portfolios-bar-header">
-        <span class="portfolios-bar-title">My Portfolios</span>
-        <button class="btn-save-portfolio" onclick="savePortfolio()" id="btnSavePortfolio" disabled>+ Save</button>
-      </div>
-      <div class="portfolio-slots" id="portfolioSlots">
-        <span class="portfolios-empty">No saved portfolios yet.</span>
-      </div>
-    </div>
-
     <div class="panel">
       <div class="panel-header" style="display:flex;align-items:center;justify-content:space-between;">
-        <h2>Build My Portfolio</h2>
+        <h2>Your Holdings</h2>
         <div style="display:flex;gap:6px;">
           <button class="slot-btn" onclick="sharePortfolio()" title="Share portfolio link">🔗</button>
           <button class="slot-btn" onclick="exportPDF()" title="Export PDF">⬇</button>
@@ -1061,6 +814,14 @@
           <button class="btn-example" onclick="loadExample('balanced')">⚖️ Balanced</button>
           <button class="btn-example" onclick="loadExample('conservative')">🛡️ Conservative</button>
           <button class="btn-example" onclick="loadExample('crypto')">₿ Crypto Mix</button>
+        </div>
+      </div>
+
+      <!-- Portfolio save/load -->
+      <div class="portfolio-manager" id="portfolioManager">
+        <div class="portfolio-slots" id="portfolioSlots"></div>
+        <div class="pm-actions">
+          <button class="btn-pm" onclick="savePortfolio()">＋ Save Portfolio</button>
         </div>
       </div>
 
@@ -1135,12 +896,7 @@
   <div>
     <div class="results-panel" id="resultsPanel">
       <div class="empty-state">
-        <div class="placeholder-icon" style="font-size:0;opacity:1"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" style="opacity:0.35">
-  <circle cx="24" cy="24" r="21" stroke="#00e5a0" stroke-width="1.5"/>
-  <polygon points="24,8 27,22 24,20 21,22" fill="#00e5a0"/>
-  <polygon points="24,40 27,26 24,28 21,26" fill="#ff4d6d" opacity="0.6"/>
-  <circle cx="24" cy="24" r="2.5" fill="#e8ecf0"/>
-</svg></div>
+        <div class="placeholder-icon">🧭</div>
         <div class="placeholder-text">
           Add your US stock holdings<br>on the left, then click<br>
           <strong style="color:var(--text)">Analyze &amp; Recommend</strong>
@@ -1966,11 +1722,6 @@ function analyze() {
           'Refresh' +
         '</button>' +
       '</div>' +
-      buildSmartAlerts(profile) +
-      buildHealthCard(profile) +
-      buildSizerCard() +
-      buildWhatIfCard() +
-      '<div class="recommendations-header"><span class="recommendations-title">Recommended for You</span></div>' +
       strategyCard('aggressive','Aggressive','High growth, high risk', aggressiveETFs, marketData) +
       strategyCard('moderate','Moderate','Growth with stability', moderateETFs, marketData) +
       strategyCard('conservative','Conservative','Capital preservation', conservativeETFs, marketData) +
@@ -2154,19 +1905,6 @@ async function toggleDrawer(ticker, strategy, name, desc, isStock) {
   const holdingSummary = holdings.map(h => h.ticker + ' (' + h.pct + '% — ' + h.sector + ')').join(', ');
   const profile = getPortfolioProfile();
   const sectorSummary = Object.entries(profile.sectors).sort((a,b) => b[1]-a[1]).map(([s,p]) => s + ': ' + p + '%').join(', ');
-  // Check AI usage limit
-  const aiUses = parseInt(localStorage.getItem('pc_ai_uses') || '0');
-  if (aiUses >= FREE_AI_USES) {
-    textEl.innerHTML = '<div style="font-family:monospace;font-size:10px;color:var(--muted);line-height:1.7">' +
-      '✦ <strong style="color:var(--text)">AI explanations are a Pro feature.</strong><br>' +
-      'You\u2019ve used your 1 free AI explanation. Upgrade to get unlimited AI-powered insights for every pick.<br>' +
-      '<button onclick="showUpgradeModal()" style="margin-top:8px;background:var(--accent);color:#000;border:none;border-radius:6px;padding:5px 12px;font-size:11px;font-weight:700;cursor:pointer;">Upgrade to Pro</button>' +
-      '</div>';
-    return;
-  }
-  localStorage.setItem('pc_ai_uses', aiUses + 1);
-  updateAiBadge();
-
   textEl.innerHTML = '<div class="etf-drawer-loading"><div class="mini-spinner"></div> Analyzing your portfolio...</div>';
   try {
     const res = await fetch('/api/claude', {
@@ -2417,33 +2155,22 @@ function runWhatIf() {
 })();
 
 // ── PORTFOLIO SAVE/LOAD ───────────────────────────────────
-const MAX_SLOTS = Infinity;
-const FREE_AI_USES = 1; // Free AI explanations before upgrade prompt
+const MAX_SLOTS = 3;
 function getSavedPortfolios() { try { return JSON.parse(localStorage.getItem('pc_portfolios') || '[]'); } catch { return []; } }
 function savePortfoliosLS(p) { localStorage.setItem('pc_portfolios', JSON.stringify(p)); }
 
 function savePortfolio() {
   if (holdings.length === 0) { showToast('Add holdings first!'); return; }
   const portfolios = getSavedPortfolios();
-
-  // Show naming modal
-  document.getElementById('portfolioNameInput').value = '';
-  document.getElementById('saveModalOverlay').classList.add('visible');
-  setTimeout(() => document.getElementById('portfolioNameInput').focus(), 100);
-}
-
-function confirmSavePortfolio() {
-  const name = document.getElementById('portfolioNameInput').value.trim() || 'My Portfolio';
-  const portfolios = getSavedPortfolios();
-  portfolios.push({id: Date.now(), name, holdings: JSON.parse(JSON.stringify(holdings))});
+  if (portfolios.length >= MAX_SLOTS) {
+    showUpgradeModal();
+    return;
+  }
+  const name = 'Portfolio ' + (portfolios.length + 1);
+  portfolios.push({name, holdings: JSON.parse(JSON.stringify(holdings))});
   savePortfoliosLS(portfolios);
-  closeSaveModal();
   renderPortfolioSlots();
   showToast('✓ Portfolio saved!');
-}
-
-function closeSaveModal() {
-  document.getElementById('saveModalOverlay').classList.remove('visible');
 }
 
 function loadPortfolio(idx) {
@@ -2461,34 +2188,6 @@ function deletePortfolio(idx) {
   renderPortfolioSlots();
 }
 
-function startRename(idx) {
-  const nameEl = document.getElementById('slot-name-' + idx);
-  const slot   = document.getElementById('slot-' + idx);
-  if (!nameEl) return;
-  const portfolios = getSavedPortfolios();
-  const current = portfolios[idx]?.name || '';
-  const input = document.createElement('input');
-  input.className = 'slot-name-input';
-  input.value = current;
-  input.maxLength = 24;
-  input.style.width = Math.max(60, current.length * 8) + 'px';
-  input.addEventListener('click', e => e.stopPropagation());
-  input.addEventListener('blur', () => finishRename(idx, input.value));
-  input.addEventListener('keydown', e => {
-    if (e.key === 'Enter') input.blur();
-    if (e.key === 'Escape') renderPortfolioSlots();
-  });
-  nameEl.innerHTML = '';
-  nameEl.appendChild(input);
-  input.focus();
-  input.select();
-}
-
-function finishRename(idx, newName) {
-  renamePortfolio(idx, newName);
-  renderPortfolioSlots();
-}
-
 function renamePortfolio(idx, newName) {
   const portfolios = getSavedPortfolios();
   if (!portfolios[idx]) return;
@@ -2498,16 +2197,9 @@ function renamePortfolio(idx, newName) {
 
 function renderPortfolioSlots() {
   const el = document.getElementById('portfolioSlots');
-  const badge = document.getElementById('freeBadge');
-  const saveBtn = document.getElementById('btnSavePortfolio');
   if (!el) return;
   const portfolios = getSavedPortfolios();
-  if (badge) badge.textContent = portfolios.length + (portfolios.length === 1 ? ' portfolio' : ' portfolios');
-  if (saveBtn) saveBtn.disabled = holdings.length === 0;
-  if (portfolios.length === 0) {
-    el.innerHTML = '<span class="portfolios-empty">No saved portfolios yet — add holdings and click Save Current.</span>';
-    return;
-  }
+  if (portfolios.length === 0) { el.innerHTML = ''; return; }
   el.innerHTML = portfolios.map((p, i) =>
     '<div class="portfolio-slot" onclick="loadPortfolio(' + i + ')">' +
     '<input class="slot-name-input" value="' + p.name + '" maxlength="24"' +
@@ -2607,398 +2299,6 @@ document.addEventListener('click', e => {
   if (modal && e.target === modal) closeUpgradeModal();
 });
 
-// Init portfolios bar
-renderPortfolioSlots();
-
-// ── PORTFOLIO HEALTH CARD ────────────────────────────────
-
-// ── DIVIDEND YIELDS (approx annual %) ────────────────────
-const DIVIDEND_YIELDS = {
-  // High yielders
-  KO:3.1,PEP:3.0,JNJ:3.1,PG:2.4,MCD:2.3,WMT:1.3,T:6.5,VZ:6.8,
-  MO:9.2,PM:5.4,IBM:3.0,MMM:5.8,CVX:4.1,XOM:3.4,COP:1.7,OXY:1.2,
-  WFC:2.8,JPM:2.2,BAC:2.4,GS:2.4,MS:3.4,C:3.2,USB:4.8,TFC:4.9,
-  AXP:1.2,V:0.7,MA:0.6,COF:1.8,DFS:2.1,
-  JNJ:3.1,PFE:6.2,MRK:2.6,ABBV:3.8,BMY:4.6,GILD:3.5,
-  AMT:3.0,O:5.5,SPG:5.2,DLR:3.2,EQIX:2.1,EQR:4.0,AVB:3.3,
-  NEE:3.0,DUK:4.1,SO:3.8,AEP:3.9,EXC:4.0,PCG:0,
-  LMT:2.7,RTX:2.2,NOC:1.6,GD:2.0,
-  DE:1.5,HON:2.1,MMM:5.8,EMR:2.0,ITW:2.3,
-  HD:2.4,LOW:2.0,TGT:3.4,WMT:1.3,COST:0.6,TJX:1.5,
-  HSY:2.9,GIS:3.4,K:3.5,MDLZ:2.7,CL:2.3,
-  BRK:0,BRKB:0,
-  // ETFs
-  SCHD:3.5,VYM:2.9,VIG:1.8,DVY:4.1,HDV:3.8,SDY:2.5,
-  SPY:1.3,VOO:1.3,VTI:1.4,QQQ:0.6,IWM:1.3,
-  BND:3.4,AGG:3.3,TLT:4.1,
-  VNQ:3.8,O:5.5,
-  // Low/no dividend growth stocks
-  AAPL:0.5,MSFT:0.7,GOOGL:0,GOOG:0,META:0.4,AMZN:0,NVDA:0.03,
-  TSLA:0,AMD:0,PLTR:0,COIN:0,HOOD:0,MSTR:0,
-  NFLX:0,SPOT:0,UBER:0,LYFT:0,ABNB:0,
-  SHOP:0,MELI:0,SE:0,
-};
-
-const SPY_PROFILE = {
-  beta: 1.0,
-  sectors: {'Big Tech':28,'Financials':13,'Healthcare':12,'Consumer Discretionary':10,
-             'Industrials':9,'Communication':9,'Consumer Staples':7,'Energy':4,'Other':8},
-  topHolding: 7.0, // AAPL ~7% of SPY
-  sectorCount: 11,
-};
-
-function buildHealthCard(profile) {
-  const tickers = holdings.map(h => h.ticker);
-  const total = totalAllocation() || 1;
-  const beta = profile.beta;
-  const sectorCount = Object.keys(profile.sectors).length;
-
-  // Risk score 0-100
-  const riskScore = Math.round(Math.min(100, Math.max(0, (beta / 2.0) * 100)));
-  const riskLabel = riskScore < 30 ? 'Conservative' : riskScore < 55 ? 'Moderate' : riskScore < 75 ? 'Aggressive' : 'Very High';
-  const riskColor = riskScore < 30 ? 'var(--conservative)' : riskScore < 55 ? 'var(--moderate)' : 'var(--aggressive)';
-
-  // Diversification score — based on sector count & top concentration
-  const topSectorPct = Math.max(...Object.values(profile.sectors));
-  const divScore = Math.round(Math.min(100, Math.max(0,
-    (sectorCount / 8) * 50 + (1 - topSectorPct / 100) * 50
-  )));
-  const divLabel = divScore >= 70 ? 'Well diversified' : divScore >= 45 ? 'Moderately diversified' : 'Concentrated';
-  const divClass = divScore >= 70 ? 'good' : divScore >= 45 ? 'warn' : 'bad';
-
-  // Portfolio Letter Grade
-  // Based on: diversification (40%), risk-appropriateness (30%), overlap (20%), dividend (10%)
-  const overlapPenalty = Math.min(30, (() => {
-    let pen = 0;
-    for (const [stocks, etfs] of CORRELATED_PAIRS) {
-      const hs = stocks.filter(t => tickers.includes(t));
-      const he = etfs.filter(t => tickers.includes(t));
-      if (hs.length >= 1 && he.length >= 1) pen += 10;
-    }
-    return pen;
-  })());
-  const gradeScore = Math.round(
-    (divScore * 0.4) +
-    ((100 - Math.abs(riskScore - 50)) * 0.3) + // penalize extremes
-    ((100 - overlapPenalty * 3.33) * 0.2) +
-    (20) // base 20 for having any portfolio
-  );
-  const gradeLetter = gradeScore >= 90 ? 'A+' : gradeScore >= 85 ? 'A' : gradeScore >= 80 ? 'A-' :
-    gradeScore >= 75 ? 'B+' : gradeScore >= 70 ? 'B' : gradeScore >= 65 ? 'B-' :
-    gradeScore >= 60 ? 'C+' : gradeScore >= 55 ? 'C' : gradeScore >= 50 ? 'C-' : 'D';
-  const gradeColor = gradeLetter.startsWith('A') ? 'var(--conservative)' :
-    gradeLetter.startsWith('B') ? 'var(--moderate)' : 'var(--aggressive)';
-
-  // Estimated dividend yield (weighted)
-  let totalDivYield = 0;
-  holdings.forEach(h => {
-    const y = DIVIDEND_YIELDS[h.ticker] || 0;
-    totalDivYield += y * (h.pct / 100);
-  });
-  totalDivYield = Math.round(totalDivYield * 10) / 10;
-  const divYieldLabel = totalDivYield >= 3 ? 'Income-friendly' : totalDivYield >= 1.5 ? 'Moderate income' : 'Growth-focused';
-  const divYieldClass = totalDivYield >= 3 ? 'good' : totalDivYield >= 1 ? 'warn' : 'bad';
-
-  // Benchmark vs SPY
-  const betaDelta = Math.round((beta - SPY_PROFILE.beta) * 100) / 100;
-  const betaDeltaClass = betaDelta > 0.2 ? 'delta-up' : betaDelta < -0.2 ? 'delta-down' : 'delta-flat';
-  const betaDeltaStr = (betaDelta > 0 ? '+' : '') + betaDelta;
-  const topSectorVsSpy = topSectorPct - 28; // vs SPY top sector ~28%
-  const topSectorClass = topSectorVsSpy > 15 ? 'delta-down' : topSectorVsSpy > 5 ? 'delta-up' : 'delta-flat';
-  const topSectorStr = (topSectorVsSpy > 0 ? '+' : '') + Math.round(topSectorVsSpy) + '%';
-
-  // Largest holding
-  const largest = holdings.sort((a,b) => b.pct - a.pct)[0];
-  const largestVsSpy = Math.round(largest.pct - SPY_PROFILE.topHolding);
-  const largestClass = largestVsSpy > 10 ? 'delta-down' : largestVsSpy > 0 ? 'delta-up' : 'delta-flat';
-  const largestStr = (largestVsSpy > 0 ? '+' : '') + largestVsSpy + '%';
-
-  // Rebalancing suggestions
-  const rebalances = [];
-  Object.entries(profile.sectors).forEach(([sector, pct]) => {
-    const t = SECTOR_TARGETS[sector];
-    if (!t) return;
-    if (pct > t.mod + 15) rebalances.push({type:'trim', text:'<span class="trim">Trim ' + sector + '</span> — ' + pct + '% is well above a balanced target of ~' + t.mod + '%'});
-    if (pct > t.mod + 30) rebalances[rebalances.length-1].text = '<span class="trim">Significantly overweight ' + sector + '</span> — ' + pct + '% (target ~' + t.mod + '%). Consider rebalancing.';
-  });
-  const missedMod = Object.entries(SECTOR_TARGETS)
-    .filter(([s,t]) => !profile.sectors[s] && t.mod >= 5)
-    .sort((a,b) => b[1].mod - a[1].mod).slice(0,2);
-  missedMod.forEach(([s,t]) => rebalances.push({type:'add', text:'<span class="add">Add ' + s + '</span> — not in your portfolio, moderate target ~' + t.mod + '%'}));
-  if (rebalances.length === 0) rebalances.push({type:'ok', text:'Portfolio looks well-balanced across sectors. No major rebalancing needed.'});
-
-  // Overlap warnings
-  const overlaps = [];
-  for (const [stocks, etfs, msg] of CORRELATED_PAIRS) {
-    const hs = stocks.filter(t => tickers.includes(t));
-    const he = etfs.filter(t => tickers.includes(t));
-    if (hs.length >= 1 && he.length >= 1) {
-      overlaps.push(msg.replace('{stocks}', hs.join(', ')).replace('{etf}', he.join(' & ')));
-    }
-  }
-
-  return '<div class="health-card">' +
-    '<div class="health-card-title">Portfolio Health</div>' +
-    '<div class="health-grid">' +
-
-    // Risk Score
-    '<div class="health-metric">' +
-      '<div class="health-metric-label">Risk Level</div>' +
-      '<div class="health-metric-value" style="color:' + riskColor + '">' + riskLabel + '</div>' +
-      '<div class="risk-meter-track"><div class="risk-meter-fill" style="width:' + riskScore + '%;background:' + riskColor + '"></div></div>' +
-      '<div class="health-metric-sub">Beta ' + beta + ' &middot; ' + riskScore + '/100</div>' +
-    '</div>' +
-
-    // Diversification
-    '<div class="health-metric">' +
-      '<div class="health-metric-label">Diversification</div>' +
-      '<div class="health-metric-value">' + divScore + '<span style="font-size:12px;font-weight:400;color:var(--muted)">/100</span></div>' +
-      '<div class="health-metric-sub ' + divClass + '">' + divLabel + '</div>' +
-      '<div class="health-metric-sub">' + sectorCount + ' sectors &middot; top: ' + Math.round(topSectorPct) + '%</div>' +
-    '</div>' +
-
-    // Grade
-    '<div class="health-metric">' +
-      '<div class="health-metric-label">Portfolio Grade</div>' +
-      '<div class="health-metric-value" style="color:' + gradeColor + ';font-size:32px">' + gradeLetter + '</div>' +
-      '<div class="health-metric-sub ' + (gradeScore >= 75 ? 'good' : gradeScore >= 60 ? 'warn' : 'bad') + '">' + gradeScore + '/100 overall</div>' +
-    '</div>' +
-
-    // Dividend Yield
-    '<div class="health-metric">' +
-      '<div class="health-metric-label">Est. Dividend Yield</div>' +
-      '<div class="health-metric-value">' + totalDivYield + '<span style="font-size:13px;font-weight:400;color:var(--muted)">%</span></div>' +
-      '<div class="health-metric-sub ' + divYieldClass + '">' + divYieldLabel + '</div>' +
-      '<div class="health-metric-sub">~$' + Math.round(totalDivYield * 10) + '/yr per $1,000</div>' +
-    '</div>' +
-
-    // Benchmark vs SPY
-    '<div class="health-metric" style="grid-column:1/-1;text-align:left">' +
-      '<div class="health-metric-label" style="margin-bottom:12px;text-align:left">vs S&amp;P 500 (SPY)</div>' +
-      '<div class="benchmark-row"><span class="benchmark-label">Portfolio Beta</span><span class="benchmark-yours">' + beta + '</span><span class="benchmark-spy">SPY 1.0</span><span class="benchmark-delta ' + betaDeltaClass + '">' + betaDeltaStr + '</span></div>' +
-      '<div class="benchmark-row"><span class="benchmark-label">Top Sector</span><span class="benchmark-yours">' + Math.round(topSectorPct) + '%</span><span class="benchmark-spy">SPY ~28%</span><span class="benchmark-delta ' + topSectorClass + '">' + topSectorStr + '</span></div>' +
-      '<div class="benchmark-row"><span class="benchmark-label">Largest Holding</span><span class="benchmark-yours">' + largest.ticker + ' ' + largest.pct + '%</span><span class="benchmark-spy">SPY top ~7%</span><span class="benchmark-delta ' + largestClass + '">' + largestStr + '</span></div>' +
-    '</div>' +
-
-    // Rebalance suggestions
-    '<div class="health-metric" style="grid-column:1/-1;text-align:left">' +
-      '<div class="health-metric-label" style="margin-bottom:12px;text-align:left">Rebalancing Suggestions</div>' +
-      '<div class="rebalance-list">' +
-        rebalances.map(r => '<div class="rebalance-item"><span class="rebalance-icon">' + (r.type==='trim'?'↓':r.type==='add'?'↑':'✓') + '</span><span>' + r.text + '</span></div>').join('') +
-      '</div>' +
-    '</div>' +
-
-    // Overlap warnings (only if any)
-    (overlaps.length > 0 ?
-      '<div class="health-metric" style="grid-column:1/-1;text-align:left">' +
-        '<div class="health-metric-label" style="margin-bottom:12px;text-align:left">Overlap Warnings</div>' +
-        '<div class="overlap-list">' +
-          overlaps.map(w => '<div class="overlap-item"><span class="overlap-icon">⚠</span><span>' + w + '</span></div>').join('') +
-        '</div>' +
-      '</div>'
-    : '') +
-
-    '</div></div>';
-}
-
-// ── APPROXIMATE PRICES (for position sizing when live data unavailable) ────
-const APPROX_PRICES = {
-  AAPL:235,MSFT:415,NVDA:140,AMZN:230,META:680,GOOGL:200,GOOG:200,TSLA:320,
-  AVGO:200,ORCL:165,ADBE:450,NFLX:1000,AMD:120,INTC:25,QCOM:160,MU:100,
-  JPM:260,BAC:47,GS:580,MS:130,WFC:75,V:340,MA:550,AXP:290,COF:190,
-  JNJ:155,UNH:530,LLY:800,PFE:27,ABBV:195,MRK:100,TMO:520,DHR:230,
-  COST:970,WMT:95,HD:390,TGT:130,LOW:250,AMZN:230,TJX:120,
-  XOM:115,CVX:160,COP:120,OXY:60,NEE:70,FSLR:170,ENPH:75,
-  COIN:280,MSTR:380,HOOD:45,DKNG:40,SOFI:14,AFRM:60,PYPL:85,
-  PLTR:90,CRWD:430,PANW:190,ZS:210,OKTA:100,NET:115,S:20,FTNT:100,
-  SHOP:110,MELI:2000,ETSY:60,CHWY:35,W:60,
-  UBER:75,LYFT:18,ABNB:145,BKNG:4500,
-  RIVN:13,NIO:5,LCID:3,GM:50,F:11,
-  DIS:115,NFLX:1000,SPOT:450,RBLX:50,EA:130,TTWO:140,
-  BABA:110,BIDU:90,PDD:120,JD:30,SE:80,
-  DUOL:380,APP:430,SNAP:12,PINS:30,RDDT:150,
-  LMT:500,RTX:125,NOC:475,GD:280,AXON:570,
-  GLD:240,SLV:30,NEM:40,FCX:45,
-  SPY:590,VOO:540,QQQ:490,VTI:270,IWM:225,GDX:40,
-  SMH:230,SOXX:230,ARKK:55,KWEB:30,VWO:50,EFA:80,VEA:55,
-  BND:73,AGG:96,TLT:90,VNQ:80,SCHD:85,VYM:120,
-  XLK:240,XLF:50,XLV:155,XLE:95,XLI:130,XLP:75,XLU:67,XLRE:38,
-  IBIT:55,BITO:25,CIBR:28,IGV:85,RSP:170,
-};
-
-function getApproxPrice(ticker) {
-  return APPROX_PRICES[ticker] || null;
-}
-
-// ── SMART ALERTS ──────────────────────────────────────────
-function buildSmartAlerts(profile) {
-  const alerts = [];
-  const sectors = profile.sectors;
-  const beta = profile.beta;
-  const tickers = holdings.map(h => h.ticker);
-  const total = totalAllocation() || 1;
-
-  // Concentration risk
-  const topSector = Object.entries(sectors).sort((a,b) => b[1]-a[1])[0];
-  if (topSector && topSector[1] > 45) {
-    alerts.push({type:'bad', icon:'🔴', text:'<strong>High concentration risk:</strong> ' + topSector[1] + '% of your portfolio is in ' + topSector[0] + '. A single sector downturn could significantly impact returns.'});
-  } else if (topSector && topSector[1] > 30) {
-    alerts.push({type:'warn', icon:'⚠️', text:'<strong>' + topSector[0] + '</strong> makes up ' + topSector[1] + '% of your portfolio — watch for sector-specific volatility.'});
-  }
-
-  // High beta warning
-  if (beta > 1.6) {
-    alerts.push({type:'bad', icon:'📈', text:'<strong>High volatility portfolio:</strong> Beta of ' + beta + ' means your portfolio moves ~' + Math.round(beta*100) + '% for every 100% the market moves. Expect amplified swings in both directions.'});
-  }
-
-  // No defensive holdings
-  const defensiveSectors = ['Healthcare','Consumer Staples','Utilities','Bonds','Gold & Metals','Dividends'];
-  const hasDefensive = defensiveSectors.some(s => sectors[s] > 0);
-  if (!hasDefensive && holdings.length >= 4) {
-    alerts.push({type:'warn', icon:'🛡️', text:'<strong>No defensive holdings:</strong> Your portfolio has zero exposure to defensive sectors (Healthcare, Staples, Bonds, Gold). Consider adding a buffer for market downturns.'});
-  }
-
-  // Over-allocated to single stock
-  const maxStock = holdings.sort((a,b) => b.pct-a.pct)[0];
-  if (maxStock && maxStock.pct > 30) {
-    alerts.push({type:'bad', icon:'⚡', text:'<strong>' + maxStock.ticker + ' is ' + maxStock.pct + '% of your portfolio</strong> — a single stock at this weight is unusually concentrated. Even strong companies can drop 50%+ in a correction.'});
-  }
-
-  // Overlap warning
-  for (const [stocks, etfs, msg] of CORRELATED_PAIRS) {
-    const hs = stocks.filter(t => tickers.includes(t));
-    const he = etfs.filter(t => tickers.includes(t));
-    if (hs.length >= 2 && he.length >= 1) {
-      alerts.push({type:'warn', icon:'🔁', text:'<strong>Overlap detected:</strong> ' + msg.replace('{stocks}', hs.join(' + ')).replace('{etf}', he.join(' & '))});
-      break; // just the first overlap
-    }
-  }
-
-  // Positive: well diversified
-  if (alerts.length === 0) {
-    const sectorCount = Object.keys(sectors).length;
-    alerts.push({type:'good', icon:'✅', text:'<strong>Looking good!</strong> Your portfolio spans ' + sectorCount + ' sectors with a beta of ' + beta + '. No major concentration risks detected.'});
-  }
-
-  return '<div class="smart-alerts">' +
-    alerts.slice(0,3).map(a =>
-      '<div class="alert-item alert-' + a.type + '">' +
-      '<span class="alert-icon">' + a.icon + '</span>' +
-      '<span class="alert-text">' + a.text + '</span>' +
-      '</div>'
-    ).join('') +
-    '</div>';
-}
-
-// ── POSITION SIZING ───────────────────────────────────────
-function buildSizerCard() {
-  const rows = holdings.map(h => {
-    const price = getApproxPrice(h.ticker);
-    return {ticker:h.ticker, sector:h.sector, pct:h.pct, price};
-  });
-
-  const tableRows = rows.map(r =>
-    '<tr>' +
-    '<td><div class="sizer-ticker">' + r.ticker + '</div><div class="sizer-sector">' + r.sector + '</div></td>' +
-    '<td class="sizer-pct">' + r.pct + '%</td>' +
-    '<td class="sizer-dollars" id="sz-dollars-' + r.ticker + '">—</td>' +
-    '<td class="sizer-shares" id="sz-shares-' + r.ticker + '">' + (r.price ? '@ $' + r.price : 'no price') + '</td>' +
-    '</tr>'
-  ).join('');
-
-  return '<div class="sizer-card">' +
-    '<div class="sizer-header"><span class="sizer-title">Position Sizing</span></div>' +
-    '<div class="sizer-input-row">' +
-      '<span class="sizer-prefix">$</span>' +
-      '<input class="sizer-input" id="sizerAmount" type="number" placeholder="10000" min="100" step="100" oninput="updateSizer()" />' +
-    '</div>' +
-    '<table class="sizer-table">' +
-      '<thead><tr><th>Holding</th><th>Alloc</th><th style="text-align:right">$ Amount</th><th style="text-align:right">Est. Shares</th></tr></thead>' +
-      '<tbody>' + tableRows + '</tbody>' +
-    '</table>' +
-    '<div class="sizer-note">&#9432; Share counts use approximate prices. Actual prices vary — always verify before placing orders.</div>' +
-  '</div>';
-}
-
-function updateSizer() {
-  const amt = parseFloat(document.getElementById('sizerAmount')?.value) || 0;
-  holdings.forEach(h => {
-    const dollarEl = document.getElementById('sz-dollars-' + h.ticker);
-    const shareEl  = document.getElementById('sz-shares-' + h.ticker);
-    if (!dollarEl) return;
-    const dollars = Math.round((h.pct / 100) * amt);
-    dollarEl.textContent = amt > 0 ? '$' + dollars.toLocaleString() : '—';
-    const price = getApproxPrice(h.ticker);
-    if (shareEl && price && amt > 0) {
-      const shares = Math.round((dollars / price) * 10) / 10;
-      shareEl.textContent = shares + ' shares @ $' + price;
-    } else if (shareEl) {
-      shareEl.textContent = price ? '@ $' + price : 'no price data';
-    }
-  });
-}
-
-// ── WHAT-IF CARD (results panel version) ─────────────────
-function buildWhatIfCard() {
-  return '<div class="whatif-card">' +
-    '<div class="whatif-card-title">⚡ What-If Simulator</div>' +
-    '<div class="whatif-card-row">' +
-      '<div><div class="whatif-card-label">Add Ticker</div>' +
-        '<input type="text" id="wiTicker2" maxlength="6" placeholder="e.g. NVDA" style="text-transform:uppercase;width:100%" oninput="runWhatIf2()" /></div>' +
-      '<div><div class="whatif-card-label">Weight</div>' +
-        '<input type="number" id="wiPct2" placeholder="%" min="0.1" max="100" step="0.1" oninput="runWhatIf2()" /></div>' +
-      '<button class="btn-whatif-run" onclick="runWhatIf2()">Preview</button>' +
-    '</div>' +
-    '<div class="whatif-card-result" id="wiResult2">Enter a ticker above to preview how adding it would change your portfolio risk, sector exposure, and beta.</div>' +
-  '</div>';
-}
-
-function runWhatIf2() {
-  const ticker = (document.getElementById('wiTicker2')?.value||'').trim().toUpperCase().replace(/[^A-Z0-9]/g,'');
-  const pct    = parseFloat(document.getElementById('wiPct2')?.value) || 0;
-  const result = document.getElementById('wiResult2');
-  if (!result) return;
-  if (!ticker) { result.innerHTML = 'Enter a ticker above to preview how adding it would change your portfolio risk, sector exposure, and beta.'; return; }
-  if (pct <= 0) { result.innerHTML = 'Enter a weight percentage to see the impact.'; return; }
-  const info = STOCK_DB[ticker] || {name:ticker, sector:'Other', beta:1.0};
-  const currentTotal = totalAllocation();
-  if (holdings.find(h => h.ticker === ticker)) { result.innerHTML = '<span class="wi-bad">' + ticker + ' is already in your portfolio.</span>'; return; }
-  if (currentTotal + pct > 100.05) { result.innerHTML = 'Only <strong class="wi-new">' + Math.round((100-currentTotal)*10)/10 + '%</strong> remaining — reduce a holding first.'; return; }
-  const simHoldings = [...holdings, {ticker, pct, ...info}];
-  const simTotal = simHoldings.reduce((s,h)=>s+h.pct,0);
-  let simBeta = 0; const simSectors = {};
-  simHoldings.forEach(h => { simBeta += (h.beta||1)*h.pct; simSectors[h.sector]=(simSectors[h.sector]||0)+h.pct; });
-  simBeta = Math.round((simBeta/simTotal)*100)/100;
-  const currentBeta = getPortfolioProfile().beta;
-  const betaDelta = Math.round((simBeta - currentBeta)*100)/100;
-  const betaDir = betaDelta > 0.05 ? '▲' : betaDelta < -0.05 ? '▼' : '→';
-  const betaClass = betaDelta > 0.1 ? 'wi-bad' : betaDelta < -0.05 ? 'wi-good' : 'wi-new';
-  const newSectorPct = Math.round((simSectors[info.sector]||0)/simTotal*100);
-  const existingSectorPct = Math.round((getPortfolioProfile().sectors[info.sector]||0));
-  const sectorChange = newSectorPct - existingSectorPct;
-  result.innerHTML =
-    'Adding <strong>' + ticker + '</strong> (' + (info.name||ticker) + ') at <strong class="wi-new">' + pct + '%</strong>:<br>' +
-    '&middot; <strong>' + info.sector + '</strong>: ' + existingSectorPct + '% &rarr; <strong class="wi-new">' + newSectorPct + '%</strong> (' + (sectorChange>0?'+':'') + sectorChange + '%)<br>' +
-    '&middot; Portfolio beta: ' + currentBeta + ' ' + betaDir + ' <span class="' + betaClass + '">' + simBeta + '</span><br>' +
-    '&middot; <strong class="wi-new">' + Math.round((100-currentTotal-pct)*10)/10 + '%</strong> remaining unallocated';
-}
-
-// ── AI USAGE TRACKER ─────────────────────────────────────
-function updateAiBadge() {
-  const used = parseInt(localStorage.getItem('pc_ai_uses') || '0');
-  const remaining = Math.max(0, FREE_AI_USES - used);
-  // Update the note in upgrade modal
-  const note = document.getElementById('aiUsesNote');
-  if (note) note.textContent = remaining + ' free AI use' + (remaining !== 1 ? 's' : '') + ' remaining.';
-  // Update pick hints to show remaining count
-  document.querySelectorAll('.pick-hint, .etf-drawer-label, .pick-drawer-label').forEach(el => {
-    if (remaining === 0 && !el.classList.contains('ai-locked')) {
-      el.style.opacity = '0.4';
-    }
-  });
-}
-updateAiBadge();
-
 // ── ENTER KEY ─────────────────────────────────────────────
 document.getElementById('tickerInput').addEventListener('keydown', e => { if (e.key==='Enter') document.getElementById('pctInput').focus(); });
 document.getElementById('pctInput').addEventListener('keydown', e => { if (e.key==='Enter') addStock(); });
@@ -3007,26 +2307,21 @@ document.getElementById('pctInput').addEventListener('keydown', e => { if (e.key
   <div class="upgrade-modal" id="upgradeModal">
     <div class="upgrade-box">
       <button class="upgrade-close" onclick="closeUpgradeModal()">&times;</button>
-      <div class="upgrade-icon" style="font-size:0"><svg width="36" height="36" viewBox="0 0 48 48" fill="none">
-  <circle cx="24" cy="24" r="21" stroke="#00e5a0" stroke-width="1.5"/>
-  <polygon points="24,8 27,22 24,20 21,22" fill="#00e5a0"/>
-  <polygon points="24,40 27,26 24,28 21,26" fill="#ff4d6d" opacity="0.6"/>
-  <circle cx="24" cy="24" r="2.5" fill="#e8ecf0"/>
-</svg></div>
-      <div class="upgrade-title">Unlock AI Insights</div>
-      <div class="upgrade-sub">You've used your <strong style="color:var(--text)">3 free AI explanations</strong>.<br>Upgrade to get unlimited AI-powered analysis for every pick, personalized to your portfolio.</div>
+      <div class="upgrade-icon">🧭</div>
+      <div class="upgrade-title">Unlock more portfolios</div>
+      <div class="upgrade-sub">You've hit the <strong style="color:var(--text)">3 portfolio</strong> limit on the free plan.<br>Upgrade to save unlimited portfolios and unlock Pro features.</div>
       <div class="upgrade-tiers">
         <div class="upgrade-tier">
           <div>
             <div class="upgrade-tier-name">Free</div>
-            <div class="upgrade-tier-desc">1 AI explanation · Unlimited portfolios · All analysis tools</div>
+            <div class="upgrade-tier-desc">3 portfolios · All current features</div>
           </div>
           <div class="upgrade-tier-price" style="color:var(--muted)">$0</div>
         </div>
         <div class="upgrade-tier featured">
           <div>
             <div class="upgrade-tier-name">Pro ✦</div>
-            <div class="upgrade-tier-desc">Unlimited AI insights · Screenshot import · PDF export</div>
+            <div class="upgrade-tier-desc">Unlimited portfolios · Email alerts · PDF export</div>
           </div>
           <div class="upgrade-tier-price">$2<span>/mo</span></div>
         </div>
@@ -3039,10 +2334,10 @@ document.getElementById('pctInput').addEventListener('keydown', e => { if (e.key
         </div>
       </div>
       <div class="upgrade-actions">
-        <button class="btn-upgrade-cta" onclick="showToast('Coming soon! 🚀'); closeUpgradeModal();">Get Pro — $2/mo</button>
-        <button class="btn-upgrade-secondary" onclick="showToast('Coming soon! 🚀'); closeUpgradeModal();">Lifetime deal — $20</button>
+        <button class="btn-upgrade-cta" onclick="window.location.href='https://buy.stripe.com/dRm4gz5LMb4Y7mv8eB6AM01'">Get Pro — $2/mo</button>
+        <button class="btn-upgrade-secondary" onclick="window.location.href='https://buy.stripe.com/28E28r6PQ8WQeOXbqN6AM00'">Lifetime deal — $20</button>
       </div>
-      <div class="upgrade-free-note" id="aiUsesNote"></div>
+      <div class="upgrade-free-note">Delete a saved portfolio to save a new one on the free plan.</div>
     </div>
   </div>
 
