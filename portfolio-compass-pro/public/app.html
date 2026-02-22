@@ -1891,8 +1891,6 @@ function refreshMarketData() {
 // ── DRAWER ───────────────────────────────────────────────
 const drawerCache = {};
 
-const FREE_AI_USES = 1;
-
 async function toggleDrawer(ticker, strategy, name, desc, isStock) {
   const id = 'item-' + ticker + '-' + strategy;
   const itemEl = document.getElementById(id);
@@ -1904,17 +1902,6 @@ async function toggleDrawer(ticker, strategy, name, desc, isStock) {
   itemEl.classList.add('open');
   const cacheKey = id;
   if (drawerCache[cacheKey]) { textEl.innerHTML = drawerCache[cacheKey]; return; }
-
-  // AI gating
-  const aiUses = parseInt(localStorage.getItem('pc_ai_uses') || '0');
-  if (aiUses >= FREE_AI_USES) {
-    textEl.innerHTML = '<div style="font-family:monospace;font-size:11px;line-height:1.6;color:var(--muted)">' +
-      '✦ You’ve used your 1 free AI explanation. ' +
-      '<button onclick="showUpgradeModal()" style="background:var(--accent);color:#000;border:none;border-radius:5px;padding:4px 10px;font-family:monospace;font-size:10px;font-weight:700;cursor:pointer;margin-left:4px">Upgrade to Pro</button>' +
-      '</div>';
-    return;
-  }
-  localStorage.setItem('pc_ai_uses', aiUses + 1);
   const holdingSummary = holdings.map(h => h.ticker + ' (' + h.pct + '% — ' + h.sector + ')').join(', ');
   const profile = getPortfolioProfile();
   const sectorSummary = Object.entries(profile.sectors).sort((a,b) => b[1]-a[1]).map(([s,p]) => s + ': ' + p + '%').join(', ');
@@ -2301,7 +2288,7 @@ function toggleShowMore(type) {
 
 // ── UPGRADE MODAL ────────────────────────────────────────
 function showUpgradeModal() {
-  document.getElementById('upgradeModal').classList.add('open');
+  window.location.href = 'https://buy.stripe.com/dRm4gz5LMb4Y7mv8eB6AM01';
 }
 function closeUpgradeModal() {
   document.getElementById('upgradeModal').classList.remove('open');
@@ -2317,24 +2304,24 @@ document.getElementById('tickerInput').addEventListener('keydown', e => { if (e.
 document.getElementById('pctInput').addEventListener('keydown', e => { if (e.key==='Enter') addStock(); });
 </script>
   <!-- Upgrade Modal -->
-  <div class="upgrade-modal" id="upgradeModal">
+  <div class="upgrade-modal" id="upgradeModal" style="display:none!important">
     <div class="upgrade-box">
       <button class="upgrade-close" onclick="closeUpgradeModal()">&times;</button>
       <div class="upgrade-icon">🧭</div>
-      <div class="upgrade-title">Unlock AI Insights</div>
-      <div class="upgrade-sub">You’ve used your <strong style="color:var(--text)">1 free AI explanation</strong>.<br>Upgrade to get unlimited AI-powered insights for every pick.</div>
+      <div class="upgrade-title">Unlock more portfolios</div>
+      <div class="upgrade-sub">You've hit the <strong style="color:var(--text)">3 portfolio</strong> limit on the free plan.<br>Upgrade to save unlimited portfolios and unlock Pro features.</div>
       <div class="upgrade-tiers">
         <div class="upgrade-tier">
           <div>
             <div class="upgrade-tier-name">Free</div>
-            <div class="upgrade-tier-desc">1 AI explanation · Unlimited portfolios · All analysis tools</div>
+            <div class="upgrade-tier-desc">3 portfolios · All current features</div>
           </div>
           <div class="upgrade-tier-price" style="color:var(--muted)">$0</div>
         </div>
         <div class="upgrade-tier featured">
           <div>
             <div class="upgrade-tier-name">Pro ✦</div>
-            <div class="upgrade-tier-desc">Unlimited AI insights · Screenshot import · PDF export</div>
+            <div class="upgrade-tier-desc">Unlimited portfolios · Email alerts · PDF export</div>
           </div>
           <div class="upgrade-tier-price">$2<span>/mo</span></div>
         </div>
@@ -2350,7 +2337,7 @@ document.getElementById('pctInput').addEventListener('keydown', e => { if (e.key
         <button class="btn-upgrade-cta" onclick="window.location.href='https://buy.stripe.com/dRm4gz5LMb4Y7mv8eB6AM01'">Get Pro — $2/mo</button>
         <button class="btn-upgrade-secondary" onclick="window.location.href='https://buy.stripe.com/28E28r6PQ8WQeOXbqN6AM00'">Lifetime deal — $20</button>
       </div>
-      <div class="upgrade-free-note">1 free AI use remaining.</div>
+      <div class="upgrade-free-note">Delete a saved portfolio to save a new one on the free plan.</div>
     </div>
   </div>
 
