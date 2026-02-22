@@ -1,6 +1,7 @@
 'use client'
 import { SignedIn, SignedOut, SignInButton, UserButton, useUser } from '@clerk/nextjs'
 import { useState, useEffect } from 'react'
+import { isUserSubscribed } from '@/lib/supabase'
 
 export default function Home() {
   return (
@@ -60,8 +61,14 @@ function LandingPage() {
 
 function AppWithPaywall() {
   const { user } = useUser()
-  const [subscribed, setSubscribed] = useState(false)
+  const [subscribed, setSubscribed] = useState<boolean | null>(null)
   const [loading, setLoading] = useState(false)
+
+  useEffect(() => {
+    if (user) {
+      isUserSubscribed(user.id).then(setSubscribed)
+    }
+  }, [user])
 
   const handleSubscribe = async () => {
     setLoading(true)
@@ -69,6 +76,14 @@ function AppWithPaywall() {
     const data = await res.json()
     if (data.url) window.location.href = data.url
     setLoading(false)
+  }
+
+  if (subscribed === null) {
+    return (
+      <div style={{ minHeight: '100vh', background: '#0a0c10', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div style={{ color: '#00e5a0', fontFamily: 'Space Mono, monospace', fontSize: '12px' }}>Loading...</div>
+      </div>
+    )
   }
 
   if (!subscribed) {

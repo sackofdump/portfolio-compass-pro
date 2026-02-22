@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import Stripe from 'stripe'
+import { supabase } from '@/lib/supabase'
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!)
 
@@ -22,14 +23,25 @@ export async function POST(req: NextRequest) {
   if (event.type === 'checkout.session.completed') {
     const session = event.data.object
     const userId = session.metadata?.userId
-    console.log('User subscribed:', userId)
-    // TODO: save subscription status to Supabase
+    const customerId = session.customer as string
+
+    if (userId) {
+      await supabase.from('subscribers').upsert({
+        user_id: userId,
+        stripe_customer_id: customerId,
+        subscribed: true
+      })
+    }
   }
 
   if (event.type === 'customer.subscription.deleted') {
-    const subscription = event.data.object
-    console.log('Subscription cancelled:', subscription)
-    // TODO: remove subscription status from Supabase
+    const subscription = event.data.object as any
+    const customerId = subscription.customer as string
+
+    await supabase
+      .from('subscribers')
+      .update({ subscribed: false })
+      .eq('stripe_customer_id', customerId)
   }
 
   return NextResponse.json({ received: true })
